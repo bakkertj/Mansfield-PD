@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA72954415A491E500D1DFE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72954315A491E500D1DFE6 /* UIKit.framework */; };
+		DA72954615A491E500D1DFE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72954515A491E500D1DFE6 /* Foundation.framework */; };
+		DA72954815A491E500D1DFE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72954715A491E500D1DFE6 /* CoreGraphics.framework */; };
+		DA72954E15A491E500D1DFE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72954C15A491E500D1DFE6 /* InfoPlist.strings */; };
+		DA72955015A491E500D1DFE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72954F15A491E500D1DFE6 /* main.m */; };
+		DA72955415A491E500D1DFE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72955315A491E500D1DFE6 /* AppDelegate.m */; };
+		DA72955715A491E500D1DFE6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA72955515A491E500D1DFE6 /* MainStoryboard.storyboard */; };
+		DA72955A15A491E500D1DFE6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72955915A491E500D1DFE6 /* FirstViewController.m */; };
+		DA72955C15A491E500D1DFE6 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72955B15A491E500D1DFE6 /* first.png */; };
+		DA72955E15A491E500D1DFE6 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72955D15A491E500D1DFE6 /* first@2x.png */; };
+		DA72956115A491E500D1DFE6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72956015A491E500D1DFE6 /* SecondViewController.m */; };
+		DA72956315A491E500D1DFE6 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72956215A491E500D1DFE6 /* second.png */; };
+		DA72956515A491E500D1DFE6 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA72956415A491E500D1DFE6 /* second@2x.png */; };
+		DA72956D15A491E500D1DFE6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72956C15A491E500D1DFE6 /* SenTestingKit.framework */; };
+		DA72956E15A491E500D1DFE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72954315A491E500D1DFE6 /* UIKit.framework */; };
+		DA72956F15A491E500D1DFE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72954515A491E500D1DFE6 /* Foundation.framework */; };
+		DA72957715A491E500D1DFE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72957515A491E500D1DFE6 /* InfoPlist.strings */; };
+		DA72957A15A491E500D1DFE6 /* Mansfield_PDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72957915A491E500D1DFE6 /* Mansfield_PDTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA72957015A491E500D1DFE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA72953615A491E500D1DFE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA72953E15A491E500D1DFE6;
+			remoteInfo = "Mansfield PD";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA72953F15A491E500D1DFE6 /* Mansfield PD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mansfield PD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA72954315A491E500D1DFE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA72954515A491E500D1DFE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA72954715A491E500D1DFE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DA72954B15A491E500D1DFE6 /* Mansfield PD-Info.plist */ = {isa = PBXFileReference; path = "Mansfield PD-Info.plist"; sourceTree = "<group>"; };
+		DA72954D15A491E500D1DFE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA72954F15A491E500D1DFE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA72955115A491E500D1DFE6 /* Mansfield PD-Prefix.pch */ = {isa = PBXFileReference; path = "Mansfield PD-Prefix.pch"; sourceTree = "<group>"; };
+		DA72955215A491E500D1DFE6 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA72955315A491E500D1DFE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA72955615A491E500D1DFE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DA72955815A491E500D1DFE6 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		DA72955915A491E500D1DFE6 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		DA72955B15A491E500D1DFE6 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		DA72955D15A491E500D1DFE6 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		DA72955F15A491E500D1DFE6 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		DA72956015A491E500D1DFE6 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DA72956215A491E500D1DFE6 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		DA72956415A491E500D1DFE6 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		DA72956B15A491E500D1DFE6 /* Mansfield PDTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mansfield PDTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA72956C15A491E500D1DFE6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DA72957415A491E500D1DFE6 /* Mansfield PDTests-Info.plist */ = {isa = PBXFileReference; path = "Mansfield PDTests-Info.plist"; sourceTree = "<group>"; };
+		DA72957615A491E500D1DFE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA72957815A491E500D1DFE6 /* Mansfield_PDTests.h */ = {isa = PBXFileReference; path = Mansfield_PDTests.h; sourceTree = "<group>"; };
+		DA72957915A491E500D1DFE6 /* Mansfield_PDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mansfield_PDTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA72953C15A491E500D1DFE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA72954415A491E500D1DFE6 /* UIKit.framework in Frameworks */,
+				DA72954615A491E500D1DFE6 /* Foundation.framework in Frameworks */,
+				DA72954815A491E500D1DFE6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA72956715A491E500D1DFE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA72956D15A491E500D1DFE6 /* SenTestingKit.framework in Frameworks */,
+				DA72956E15A491E500D1DFE6 /* UIKit.framework in Frameworks */,
+				DA72956F15A491E500D1DFE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA72953415A491E500D1DFE6 = {
+			isa = PBXGroup;
+			children = (
+				DA72954915A491E500D1DFE6 /* Mansfield PD */,
+				DA72957215A491E500D1DFE6 /* Mansfield PDTests */,
+				DA72954215A491E500D1DFE6 /* Frameworks */,
+				DA72954015A491E500D1DFE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA72954015A491E500D1DFE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA72953F15A491E500D1DFE6 /* Mansfield PD.app */,
+				DA72956B15A491E500D1DFE6 /* Mansfield PDTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA72954215A491E500D1DFE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA72954315A491E500D1DFE6 /* UIKit.framework */,
+				DA72954515A491E500D1DFE6 /* Foundation.framework */,
+				DA72954715A491E500D1DFE6 /* CoreGraphics.framework */,
+				DA72956C15A491E500D1DFE6 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA72954915A491E500D1DFE6 /* Mansfield PD */ = {
+			isa = PBXGroup;
+			children = (
+				DA72955215A491E500D1DFE6 /* AppDelegate.h */,
+				DA72955315A491E500D1DFE6 /* AppDelegate.m */,
+				DA72955515A491E500D1DFE6 /* MainStoryboard.storyboard */,
+				DA72955815A491E500D1DFE6 /* FirstViewController.h */,
+				DA72955915A491E500D1DFE6 /* FirstViewController.m */,
+				DA72955B15A491E500D1DFE6 /* first.png */,
+				DA72955D15A491E500D1DFE6 /* first@2x.png */,
+				DA72955F15A491E500D1DFE6 /* SecondViewController.h */,
+				DA72956015A491E500D1DFE6 /* SecondViewController.m */,
+				DA72956215A491E500D1DFE6 /* second.png */,
+				DA72956415A491E500D1DFE6 /* second@2x.png */,
+				DA72954A15A491E500D1DFE6 /* Supporting Files */,
+			);
+			path = "Mansfield PD";
+			sourceTree = "<group>";
+		};
+		DA72954A15A491E500D1DFE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA72954B15A491E500D1DFE6 /* Mansfield PD-Info.plist */,
+				DA72954C15A491E500D1DFE6 /* InfoPlist.strings */,
+				DA72954F15A491E500D1DFE6 /* main.m */,
+				DA72955115A491E500D1DFE6 /* Mansfield PD-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA72957215A491E500D1DFE6 /* Mansfield PDTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA72957815A491E500D1DFE6 /* Mansfield_PDTests.h */,
+				DA72957915A491E500D1DFE6 /* Mansfield_PDTests.m */,
+				DA72957315A491E500D1DFE6 /* Supporting Files */,
+			);
+			path = "Mansfield PDTests";
+			sourceTree = "<group>";
+		};
+		DA72957315A491E500D1DFE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA72957415A491E500D1DFE6 /* Mansfield PDTests-Info.plist */,
+				DA72957515A491E500D1DFE6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA72953E15A491E500D1DFE6 /* Mansfield PD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA72957D15A491E600D1DFE6 /* Build configuration list for PBXNativeTarget "Mansfield PD" */;
+			buildPhases = (
+				DA72953B15A491E500D1DFE6 /* Sources */,
+				DA72953C15A491E500D1DFE6 /* Frameworks */,
+				DA72953D15A491E500D1DFE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mansfield PD";
+			productName = "Mansfield PD";
+			productReference = DA72953F15A491E500D1DFE6 /* Mansfield PD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA72956A15A491E500D1DFE6 /* Mansfield PDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA72958015A491E600D1DFE6 /* Build configuration list for PBXNativeTarget "Mansfield PDTests" */;
+			buildPhases = (
+				DA72956615A491E500D1DFE6 /* Sources */,
+				DA72956715A491E500D1DFE6 /* Frameworks */,
+				DA72956815A491E500D1DFE6 /* Resources */,
+				DA72956915A491E500D1DFE6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA72957115A491E500D1DFE6 /* PBXTargetDependency */,
+			);
+			name = "Mansfield PDTests";
+			productName = "Mansfield PDTests";
+			productReference = DA72956B15A491E500D1DFE6 /* Mansfield PDTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA72953615A491E500D1DFE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DA72953915A491E500D1DFE6 /* Build configuration list for PBXProject "Mansfield PD" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA72953415A491E500D1DFE6;
+			productRefGroup = DA72954015A491E500D1DFE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA72953E15A491E500D1DFE6 /* Mansfield PD */,
+				DA72956A15A491E500D1DFE6 /* Mansfield PDTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA72953D15A491E500D1DFE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA72954E15A491E500D1DFE6 /* InfoPlist.strings in Resources */,
+				DA72955715A491E500D1DFE6 /* MainStoryboard.storyboard in Resources */,
+				DA72955C15A491E500D1DFE6 /* first.png in Resources */,
+				DA72955E15A491E500D1DFE6 /* first@2x.png in Resources */,
+				DA72956315A491E500D1DFE6 /* second.png in Resources */,
+				DA72956515A491E500D1DFE6 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA72956815A491E500D1DFE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA72957715A491E500D1DFE6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA72956915A491E500D1DFE6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA72953B15A491E500D1DFE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA72955015A491E500D1DFE6 /* main.m in Sources */,
+				DA72955415A491E500D1DFE6 /* AppDelegate.m in Sources */,
+				DA72955A15A491E500D1DFE6 /* FirstViewController.m in Sources */,
+				DA72956115A491E500D1DFE6 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA72956615A491E500D1DFE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA72957A15A491E500D1DFE6 /* Mansfield_PDTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA72957115A491E500D1DFE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA72953E15A491E500D1DFE6 /* Mansfield PD */;
+			targetProxy = DA72957015A491E500D1DFE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA72954C15A491E500D1DFE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA72954D15A491E500D1DFE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA72955515A491E500D1DFE6 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA72955615A491E500D1DFE6 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		DA72957515A491E500D1DFE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA72957615A491E500D1DFE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA72957B15A491E600D1DFE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DA72957C15A491E600D1DFE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA72957E15A491E600D1DFE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mansfield PD/Mansfield PD-Prefix.pch";
+				INFOPLIST_FILE = "Mansfield PD/Mansfield PD-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA72957F15A491E600D1DFE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mansfield PD/Mansfield PD-Prefix.pch";
+				INFOPLIST_FILE = "Mansfield PD/Mansfield PD-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DA72958115A491E600D1DFE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mansfield PD.app/Mansfield PD";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mansfield PD/Mansfield PD-Prefix.pch";
+				INFOPLIST_FILE = "Mansfield PDTests/Mansfield PDTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DA72958215A491E600D1DFE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mansfield PD.app/Mansfield PD";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mansfield PD/Mansfield PD-Prefix.pch";
+				INFOPLIST_FILE = "Mansfield PDTests/Mansfield PDTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA72953915A491E500D1DFE6 /* Build configuration list for PBXProject "Mansfield PD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA72957B15A491E600D1DFE6 /* Debug */,
+				DA72957C15A491E600D1DFE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA72957D15A491E600D1DFE6 /* Build configuration list for PBXNativeTarget "Mansfield PD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA72957E15A491E600D1DFE6 /* Debug */,
+				DA72957F15A491E600D1DFE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA72958015A491E600D1DFE6 /* Build configuration list for PBXNativeTarget "Mansfield PDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA72958115A491E600D1DFE6 /* Debug */,
+				DA72958215A491E600D1DFE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA72953615A491E500D1DFE6 /* Project object */;
+}
