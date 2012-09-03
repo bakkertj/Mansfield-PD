@@ -25,6 +25,9 @@
 		DA72956F15A491E500D1DFE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72954515A491E500D1DFE6 /* Foundation.framework */; };
 		DA72957715A491E500D1DFE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72957515A491E500D1DFE6 /* InfoPlist.strings */; };
 		DA72957A15A491E500D1DFE6 /* Mansfield_PDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72957915A491E500D1DFE6 /* Mansfield_PDTests.m */; };
+		DA72958415A4926900D1DFE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72958315A4926900D1DFE6 /* MapKit.framework */; };
+		DA72958A15A4B3B200D1DFE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA72958915A4B3B200D1DFE6 /* CoreLocation.framework */; };
+		DA72958D15A4B7F600D1DFE6 /* CrimeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA72958C15A4B7F600D1DFE6 /* CrimeAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,27 +45,31 @@
 		DA72954315A491E500D1DFE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA72954515A491E500D1DFE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA72954715A491E500D1DFE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DA72954B15A491E500D1DFE6 /* Mansfield PD-Info.plist */ = {isa = PBXFileReference; path = "Mansfield PD-Info.plist"; sourceTree = "<group>"; };
+		DA72954B15A491E500D1DFE6 /* Mansfield PD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mansfield PD-Info.plist"; sourceTree = "<group>"; };
 		DA72954D15A491E500D1DFE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA72954F15A491E500D1DFE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA72955115A491E500D1DFE6 /* Mansfield PD-Prefix.pch */ = {isa = PBXFileReference; path = "Mansfield PD-Prefix.pch"; sourceTree = "<group>"; };
-		DA72955215A491E500D1DFE6 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA72955115A491E500D1DFE6 /* Mansfield PD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mansfield PD-Prefix.pch"; sourceTree = "<group>"; };
+		DA72955215A491E500D1DFE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA72955315A491E500D1DFE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA72955615A491E500D1DFE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		DA72955815A491E500D1DFE6 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		DA72955815A491E500D1DFE6 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		DA72955915A491E500D1DFE6 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		DA72955B15A491E500D1DFE6 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DA72955D15A491E500D1DFE6 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		DA72955F15A491E500D1DFE6 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		DA72955F15A491E500D1DFE6 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		DA72956015A491E500D1DFE6 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DA72956215A491E500D1DFE6 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DA72956415A491E500D1DFE6 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		DA72956B15A491E500D1DFE6 /* Mansfield PDTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mansfield PDTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA72956C15A491E500D1DFE6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DA72957415A491E500D1DFE6 /* Mansfield PDTests-Info.plist */ = {isa = PBXFileReference; path = "Mansfield PDTests-Info.plist"; sourceTree = "<group>"; };
+		DA72957415A491E500D1DFE6 /* Mansfield PDTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mansfield PDTests-Info.plist"; sourceTree = "<group>"; };
 		DA72957615A491E500D1DFE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA72957815A491E500D1DFE6 /* Mansfield_PDTests.h */ = {isa = PBXFileReference; path = Mansfield_PDTests.h; sourceTree = "<group>"; };
+		DA72957815A491E500D1DFE6 /* Mansfield_PDTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mansfield_PDTests.h; sourceTree = "<group>"; };
 		DA72957915A491E500D1DFE6 /* Mansfield_PDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mansfield_PDTests.m; sourceTree = "<group>"; };
+		DA72958315A4926900D1DFE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DA72958915A4B3B200D1DFE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DA72958B15A4B7F600D1DFE6 /* CrimeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrimeAnnotation.h; sourceTree = "<group>"; };
+		DA72958C15A4B7F600D1DFE6 /* CrimeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrimeAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA72958A15A4B3B200D1DFE6 /* CoreLocation.framework in Frameworks */,
+				DA72958415A4926900D1DFE6 /* MapKit.framework in Frameworks */,
 				DA72954415A491E500D1DFE6 /* UIKit.framework in Frameworks */,
 				DA72954615A491E500D1DFE6 /* Foundation.framework in Frameworks */,
 				DA72954815A491E500D1DFE6 /* CoreGraphics.framework in Frameworks */,
@@ -92,6 +101,8 @@
 		DA72953415A491E500D1DFE6 = {
 			isa = PBXGroup;
 			children = (
+				DA72958915A4B3B200D1DFE6 /* CoreLocation.framework */,
+				DA72958315A4926900D1DFE6 /* MapKit.framework */,
 				DA72954915A491E500D1DFE6 /* Mansfield PD */,
 				DA72957215A491E500D1DFE6 /* Mansfield PDTests */,
 				DA72954215A491E500D1DFE6 /* Frameworks */,
@@ -134,6 +145,8 @@
 				DA72956215A491E500D1DFE6 /* second.png */,
 				DA72956415A491E500D1DFE6 /* second@2x.png */,
 				DA72954A15A491E500D1DFE6 /* Supporting Files */,
+				DA72958B15A4B7F600D1DFE6 /* CrimeAnnotation.h */,
+				DA72958C15A4B7F600D1DFE6 /* CrimeAnnotation.m */,
 			);
 			path = "Mansfield PD";
 			sourceTree = "<group>";
@@ -282,6 +295,7 @@
 				DA72955415A491E500D1DFE6 /* AppDelegate.m in Sources */,
 				DA72955A15A491E500D1DFE6 /* FirstViewController.m in Sources */,
 				DA72956115A491E500D1DFE6 /* SecondViewController.m in Sources */,
+				DA72958D15A4B7F600D1DFE6 /* CrimeAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
