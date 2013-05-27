@@ -3,6 +3,8 @@ import cookielib
 import urllib
 import re
 import json
+import suds
+import datetime
 from bs4 import BeautifulSoup
 
 class Incident(object):
@@ -51,6 +53,10 @@ viewstate = sp.find('input', id='__VIEWSTATE')['value']
 
 url = 'http://p2c.mansfield-tx.gov/Summary.aspx'
 
+
+now = datetime.date.today();
+then = now.fromordinal( now.toordinal() - 6 );
+
 values = {
 '__LASTFOCUS':'',	
 '__EVENTTARGET'	:'MasterPage$mainContent$cmdSubmit2',
@@ -64,8 +70,8 @@ values = {
 'MasterPage$mainContent$txtCase2':'',
 'MasterPage$mainContent$rblSearchDateToUse2':'Date Occurred',
 'MasterPage$mainContent$ddlDates2':'Specify Date',
-'MasterPage$mainContent$txtDateFrom2':'7/2/2012',
-'MasterPage$mainContent$txtDateTo2':'7/3/2012',
+'MasterPage$mainContent$txtDateFrom2':then.isoformat(),
+'MasterPage$mainContent$txtDateTo2':now.isoformat(),
 'MasterPage$mainContent$txtLName2':'',
 'MasterPage$mainContent$txtFName2':'',
 'MasterPage$mainContent$txtMName2':'',
@@ -75,7 +81,8 @@ values = {
 'MasterPage$mainContent$ddlNeighbor2':'',
 'MasterPage$mainContent$ddlRange2':''
 }
-
+#'MasterPage$mainContent$txtDateFrom2':'3/21/2013',
+#'MasterPage$mainContent$txtDateTo2':'3/27/2013',
 data = urllib.urlencode(values)
 response = urllib.urlopen(url, data)
 the_page = response.read()
@@ -165,8 +172,9 @@ for i in listOfPages:
 			
 
 # 
-# for incident in incidentList:
-# 	print incident.date + " " + incident.incident_type + " " + incident.details + " " + incident.location
+for incident in incidentList:
+        if incident.location != "1600 BLK    HERITAGE PKWY":
+		print incident.location
 # 	
 
 print json.dumps(incidentList, default=lambda o: o.__dict__)
@@ -174,3 +182,38 @@ print json.dumps(incidentList, default=lambda o: o.__dict__)
 
 
 
+url = 'http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl'
+    
+client = suds.client.Client(url)
+client.set_options(port='BasicHttpBinding_IGeocodeService')
+request = client.factory.create('GeocodeRequest')
+
+credentials = client.factory.create('ns0:Credentials')
+credentials.ApplicationId = 'AltFWQY2TzJSDciGamRNlABLPpXl4aRmet3C6QxC9j1eVoltffKHel56awkSJ_c-'
+request.Credentials = credentials
+
+for incident in incidentList:
+        if incident.location != "1600 BLK    HERITAGE PKWY" and incident.incident_type == "Incident":
+		print "Type: "+incident.incident_type + " " + incident.details;
+		#Address
+		address = client.factory.create('ns0:Address')
+		address.AddressLine = incident.location
+		address.AdminDistrict = "Texas"
+		address.Locality = "Mansfield"      
+		address.CountryRegion = "United States"
+		request.Address = address
+
+		try:       
+    			response = client.service.Geocode(request)    
+		except suds.client.WebFault, e:        
+    			print "ERROR!"        
+    			print(e)
+    			sys.exit(1)
+
+		locations = response['Results']['GeocodeResult'][0]['Locations']['GeocodeLocation']
+		for location in locations:        
+    			print(location)
+		for location in locations:        
+			print "new google.maps.LatLng("+repr(location.Latitude) + ", " + repr(location.Longitude) + "),"
+
+		
