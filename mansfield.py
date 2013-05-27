@@ -5,7 +5,23 @@ import re
 import json
 import suds
 import datetime
+import argparse
+
 from bs4 import BeautifulSoup
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--geocode", help="print out the geocode data", action="store_true");
+parser.add_argument("--google_locations", help="print out locations in google map friendy format", action="store_true");
+parser.add_argument("--json", help="print out data in JSON", action="store_true");
+parser.add_argument("--type", help="type of report to generate: incident, arrest, all");
+
+args = parser.parse_args()
+
+print_google_locations = args.google_locations;
+print_json = args.json;
+print_type = args.type;
+print_geocode = args.geocode;
+
 
 class Incident(object):
 	def __init__(self, date=None, incident_type=None, details=None, location=None):
@@ -169,19 +185,13 @@ for i in listOfPages:
 		location = re.sub(r"/", " AND", location)
 		incidentList.append(Incident(date, type, details, location))
 	        
-			
 
-# 
-for incident in incidentList:
-        if incident.location != "1600 BLK    HERITAGE PKWY":
-		print incident.location
-# 	
+# dump the JSON data retrieved from the PD websiter
+if print_json:
+	print json.dumps(incidentList, default=lambda o: o.__dict__)
 
-print json.dumps(incidentList, default=lambda o: o.__dict__)
-
-
-
-
+# instantiate the geocode service
+# \TODO We use bing for geocode but google for mapping.  Need to consolidate
 url = 'http://dev.virtualearth.net/webservices/v1/geocodeservice/geocodeservice.svc?wsdl'
     
 client = suds.client.Client(url)
@@ -193,27 +203,33 @@ credentials.ApplicationId = 'AltFWQY2TzJSDciGamRNlABLPpXl4aRmet3C6QxC9j1eVoltffK
 request.Credentials = credentials
 
 for incident in incidentList:
-        if incident.location != "1600 BLK    HERITAGE PKWY" and incident.incident_type == "Incident":
-		print "Type: "+incident.incident_type + " " + incident.details;
-		#Address
-		address = client.factory.create('ns0:Address')
-		address.AddressLine = incident.location
-		address.AdminDistrict = "Texas"
-		address.Locality = "Mansfield"      
-		address.CountryRegion = "United States"
-		request.Address = address
+		# ignore any location at 1600 heritage Pkwy since that's the police station
+        if incident.location != "1600 BLK    HERITAGE PKWY":
+        	if ( print_type == "all" or 
+        	     ( print_type == "incident" and incident.incident_type == "Incident" ) or
+        	     ( print_type == "arrest" and incident.incident_type == "Arrest" ) ):
+				#print "Type: "+incident.incident_type + " " + incident.details;
+				#Address
+				address = client.factory.create('ns0:Address')
+				address.AddressLine = incident.location
+				address.AdminDistrict = "Texas"
+				address.Locality = "Mansfield"      
+				address.CountryRegion = "United States"
+				request.Address = address
+				if print_google_locations or print_geocode:
+					try:       
+   	 					response = client.service.Geocode(request)    
+					except suds.client.WebFault, e:        
+   	 					print "ERROR!"        
+   	 					print(e)
+   	 					sys.exit(1)
 
-		try:       
-    			response = client.service.Geocode(request)    
-		except suds.client.WebFault, e:        
-    			print "ERROR!"        
-    			print(e)
-    			sys.exit(1)
-
-		locations = response['Results']['GeocodeResult'][0]['Locations']['GeocodeLocation']
-		for location in locations:        
-    			print(location)
-		for location in locations:        
-			print "new google.maps.LatLng("+repr(location.Latitude) + ", " + repr(location.Longitude) + "),"
+					locations = response['Results']['GeocodeResult'][0]['Locations']['GeocodeLocation']
+    
+					for location in locations:
+						if print_geocode:
+							print(location)
+						if print_google_locations:
+							print "new google.maps.LatLng("+repr(location.Latitude) + ", " + repr(location.Longitude) + "),"
 
 		
