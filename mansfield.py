@@ -14,7 +14,8 @@ parser.add_argument("--geocode", help="print out the geocode data", action="stor
 parser.add_argument("--google_locations", help="print out locations in google map friendy format", action="store_true");
 parser.add_argument("--json", help="print out data in JSON", action="store_true");
 parser.add_argument("--type", help="type of report to generate: incident, arrest, all");
-
+parser.add_argument("--begin_date", help="start date to track");
+parser.add_argument("--end_date", help="end date to track");
 args = parser.parse_args()
 
 print_google_locations = args.google_locations;
@@ -22,6 +23,17 @@ print_json = args.json;
 print_type = args.type;
 print_geocode = args.geocode;
 
+if( args.end_date ):
+	now= datetime.datetime.strptime(args.end_date, "%m-%d-%Y");
+else:
+	now = datetime.date.today();
+	
+
+if( args.begin_date ):
+	then = datetime.datetime.strptime(args.begin_date, "%m-%d-%Y");
+else:
+	then = now.fromordinal( now.toordinal() - 6 );
+		
 
 class Incident(object):
 	def __init__(self, date=None, incident_type=None, details=None, location=None):
@@ -29,7 +41,12 @@ class Incident(object):
     		self.incident_type = incident_type;
     		self.details = details;
     		self.location = location;
+    		
+then = datetime.datetime.strptime(then.isoformat(),"%Y-%m-%dT%H:%M:%S")
+now  = datetime.datetime.strptime( now.isoformat(),"%Y-%m-%dT%H:%M:%S")
 
+then = (str(then).split(" "))[0]
+now  = (str(now).split(" "))[0]
 
 incidentList = []
 # Browser
@@ -70,9 +87,6 @@ viewstate = sp.find('input', id='__VIEWSTATE')['value']
 url = 'http://p2c.mansfield-tx.gov/Summary.aspx'
 
 
-now = datetime.date.today();
-then = now.fromordinal( now.toordinal() - 6 );
-
 values = {
 '__LASTFOCUS':'',	
 '__EVENTTARGET'	:'MasterPage$mainContent$cmdSubmit2',
@@ -86,8 +100,8 @@ values = {
 'MasterPage$mainContent$txtCase2':'',
 'MasterPage$mainContent$rblSearchDateToUse2':'Date Occurred',
 'MasterPage$mainContent$ddlDates2':'Specify Date',
-'MasterPage$mainContent$txtDateFrom2':then.isoformat(),
-'MasterPage$mainContent$txtDateTo2':now.isoformat(),
+'MasterPage$mainContent$txtDateFrom2':then,
+'MasterPage$mainContent$txtDateTo2':now,
 'MasterPage$mainContent$txtLName2':'',
 'MasterPage$mainContent$txtFName2':'',
 'MasterPage$mainContent$txtMName2':'',
@@ -97,8 +111,7 @@ values = {
 'MasterPage$mainContent$ddlNeighbor2':'',
 'MasterPage$mainContent$ddlRange2':''
 }
-#'MasterPage$mainContent$txtDateFrom2':'3/21/2013',
-#'MasterPage$mainContent$txtDateTo2':'3/27/2013',
+
 data = urllib.urlencode(values)
 response = urllib.urlopen(url, data)
 the_page = response.read()
