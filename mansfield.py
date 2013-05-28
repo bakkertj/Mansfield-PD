@@ -25,14 +25,18 @@ print_geocode = args.geocode;
 
 if( args.end_date ):
 	now= datetime.datetime.strptime(args.end_date, "%m-%d-%Y");
+	now  = datetime.datetime.strptime( now.isoformat(),"%Y-%m-%dT%H:%M:%S")
+	now  = (str(now).split(" "))[0]
 else:
 	now = datetime.date.today();
 	
 
 if( args.begin_date ):
 	then = datetime.datetime.strptime(args.begin_date, "%m-%d-%Y");
+	then = datetime.datetime.strptime(then.isoformat(),"%Y-%m-%dT%H:%M:%S")
+	then = (str(then).split(" "))[0]
 else:
-	then = now.fromordinal( now.toordinal() - 6 );
+	then = str(now.fromordinal( now.toordinal() - 6 ));
 		
 
 class Incident(object):
@@ -42,11 +46,6 @@ class Incident(object):
     		self.details = details;
     		self.location = location;
     		
-then = datetime.datetime.strptime(then.isoformat(),"%Y-%m-%dT%H:%M:%S")
-now  = datetime.datetime.strptime( now.isoformat(),"%Y-%m-%dT%H:%M:%S")
-
-then = (str(then).split(" "))[0]
-now  = (str(now).split(" "))[0]
 
 incidentList = []
 # Browser
