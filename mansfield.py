@@ -46,6 +46,9 @@ else:
 # Calculate the date difference.  We can request data in sets of 6 or less days.
 ordinal_date_requested = datetime.datetime.strptime( then, "%Y-%m-%d").toordinal();
 days_requested = datetime.datetime.strptime( now, "%Y-%m-%d").toordinal() - datetime.datetime.strptime( then, "%Y-%m-%d").toordinal()
+if days_requested <= 0:
+	print("The end date requested must be after the begin date\n");
+	exit();
 
 class Incident(object):
 	def __init__(self, date=None, incident_type=None, details=None, location=None):
@@ -91,7 +94,7 @@ while loop < days_requested:
 	br.select_form(nr=0);
 	br.submit()
 
-	sp = BeautifulSoup(br.response().read())
+	sp = BeautifulSoup(br.response().read(), "html.parser")
 	eventvalidation = sp.find('input', id='__EVENTVALIDATION')['value']
 	viewstate = sp.find('input', id='__VIEWSTATE')['value']
 
@@ -133,7 +136,7 @@ while loop < days_requested:
 	response = urllib.urlopen(url, data)
 	the_page = response.read()
 
-	soup = BeautifulSoup(the_page)
+	soup = BeautifulSoup(the_page,"html.parser")
 
 	for e in soup.findAll('br'):
 		e.extract()
@@ -166,7 +169,6 @@ while loop < days_requested:
         location = re.sub("-BLK", " BLK", location)
         incidentList.append(Incident(date, type, details, location))
 		
-
 	numberOfPages = len(listOfPages)
 
 	eventvalidation = soup.find('input', id='__EVENTVALIDATION')['value']
@@ -183,7 +185,7 @@ while loop < days_requested:
 		response = urllib.urlopen(url, data)
 		the_page = response.read()
 
-		soup = BeautifulSoup(the_page)
+		soup = BeautifulSoup(the_page, "html.parser")
 
 		for e in soup.findAll('br'):
 			e.extract()
@@ -230,7 +232,6 @@ while loop < days_requested:
 	credentials = client.factory.create('ns0:Credentials')
 	credentials.ApplicationId = 'AltFWQY2TzJSDciGamRNlABLPpXl4aRmet3C6QxC9j1eVoltffKHel56awkSJ_c-'
 	request.Credentials = credentials
-
 	for incident in incidentList:
 			# ignore any location at 1600 heritage Pkwy since that's the police station
 			if incident.location != "1600 BLK    HERITAGE PKWY":
