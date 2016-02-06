@@ -7,7 +7,8 @@ import suds
 import datetime
 import argparse
 from time import sleep
-
+from _common import get_api
+import tweetpony
 from bs4 import BeautifulSoup
 
 parser = argparse.ArgumentParser()
@@ -218,6 +219,7 @@ while loop < days_requested:
 			
 
 	# dump the JSON data retrieved from the PD websiter
+	print_json = 1;
 	if print_json:
 		print json.dumps(incidentList, default=lambda o: o.__dict__)
 
@@ -268,4 +270,16 @@ while loop < days_requested:
 							error_count = 1;
 	loop = loop + 1;
 	sleep(0.5);
-		
+
+api = get_api();
+if not api:
+  exit
+tweet = "("+repr(location.Latitude) + ", " + repr(location.Longitude) + ")"
+print tweet
+try:
+  #status = api.update_status(status = tweet)
+  status = api.update_status(tweet)
+except tweetpony.APIError as err:
+  print "Oh no! Your tweet could not be sent. Twitter returned error #%i and said: %s" % (err.code, err.description)
+else:
+  print "Yay! Your tweet has been sent! View it here: https://twitter.com/%s/status/%s" % (status.user.screen_name, status.id_str)
